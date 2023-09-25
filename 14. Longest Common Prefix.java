@@ -22,7 +22,6 @@ class Solution {
             // Append the current character to the common prefix
             ans.append(first.charAt(i));
         }
-
         // Return the final common prefix as a string
         return ans.toString();
     }
