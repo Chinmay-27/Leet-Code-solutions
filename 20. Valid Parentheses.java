@@ -4,10 +4,6 @@ class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();  // Initialize a stack to store open brackets
         
-        // Define a mapping of open and close brackets
-        // Using a HashMap or a switch-case statement can also be an option
-        char[] bracketMapping = {')', '}', ']'};
-        
         // Iterate through each character in the input string
         for (char c : s.toCharArray()) {
             if (c == '(' || c == '{' || c == '[') {
