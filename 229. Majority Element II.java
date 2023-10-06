@@ -1,3 +1,4 @@
+import java.util.*;
 public class Solution {
     public List<Integer> majorityElement(int[] nums) {
         int candidate1 = 0, candidate2 = 0;
