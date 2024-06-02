@@ -10,7 +10,7 @@
  */
 public class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode dummy = new ListNode(-1); // Dummy node
+        ListNode dummy = new ListNode(-1); 
         ListNode current = dummy; // Current pointer
         
         while (list1 != null && list2 != null) {
