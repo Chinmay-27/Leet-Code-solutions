@@ -1,27 +1,23 @@
-import java.util.*;
-
-class Solution {
+public class Solution {
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();  // Initialize a stack to store open brackets
+        Stack<Character> stack = new Stack<>();
         
-        // Iterate through each character in the input string
-        for (char c : s.toCharArray()) {
-            if (c == '(' || c == '{' || c == '[') {
-                // If the character is an open bracket, push it onto the stack
-                stack.push(c);
-            } else if (c == ')' || c == '}' || c == ']') {
-                // If the character is a closing bracket
-                if (stack.isEmpty()) {
-                    return false;  // No corresponding open bracket found
-                }
+        for (char ch : s.toCharArray()) {
+            // If the character is an opening bracket, push it onto the stack.
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else {
+                // If the stack is empty or the top of the stack does not match the current closing bracket, return false.
+                if (stack.isEmpty()) return false;
+                
                 char top = stack.pop();
-                if (c == ')' && top != '(' || c == '}' && top != '{' || c == ']' && top != '[') {
-                    return false;  // Mismatched brackets
-                }
+                if (ch == ')' && top != '(') return false;
+                if (ch == '}' && top != '{') return false;
+                if (ch == ']' && top != '[') return false;
             }
         }
         
-        // After processing all characters, the stack should be empty for a valid string
+        // If the stack is empty, all brackets were matched correctly.
         return stack.isEmpty();
     }
 }
