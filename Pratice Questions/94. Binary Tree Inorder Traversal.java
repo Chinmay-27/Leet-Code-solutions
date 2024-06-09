@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class TreeNode {
+//  Definition for a binary tree node.
+class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -20,20 +21,18 @@ public class TreeNode {
 }
 
 class Solution {
-    private List<Integer> res = new ArrayList<>();
-
-    public List<Integer> inorderTraversal(TreeNode root) {
-        traverse(root);
-        return res;
-        
+    public List<Integer> binaryTreePaths(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Inorder(root,res);
+        return res; 
     }
 
-    private void traverse(TreeNode root) {
-        if (root == null) {
+    public void Inorder(TreeNode root,List<Integer> res){
+        if(root == null){
             return;
         }
-        traverse(root.left);
+        Inorder(root.left,res);
         res.add(root.val);
-        traverse(root.right);
-    }
+        Inorder(root.right,res);
+    } 
 }
