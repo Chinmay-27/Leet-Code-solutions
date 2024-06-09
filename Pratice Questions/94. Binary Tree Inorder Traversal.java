@@ -25,6 +25,7 @@ class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         traverse(root);
         return res;
+        
     }
 
     private void traverse(TreeNode root) {
